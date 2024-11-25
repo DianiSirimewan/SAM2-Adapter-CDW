@@ -1,0 +1,6 @@
+nohup torchrun --nproc_per_node=2 --nnodes=1 train.py --config /home/diani/diani/SAM2-Adapter/configs/demo.yaml > exp1.out &
+
+python train_single_gpu.py --config /home/diani/diani/SAM2-Adapter/configs/cod-sam-vit-l.yaml
+
+CUDA_VISIBLE_DEVICES=1 python -m torch.distributed.run train.py --nnodes 1 --nproc_per_node 1 --config configs/cdw-sam2-hiera-base-plus.yaml
+
