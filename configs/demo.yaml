@@ -5,8 +5,8 @@ train_dataset:
       classes: ['background','bin','concrete','fill dirt','timber','hard plastic','soft plastic','steel','fabric','cardboard','plaster board']
       ignore_bg: false
       palette: [[0,0,0],[128, 0, 0],[0, 128, 0],[128, 128, 0],[0, 0, 128],[128, 0, 128],[0, 128, 128],[128, 128, 128],[64, 0, 0],[192, 0, 0],[64, 128, 0]]
-      root_path_1: /home/diani/diani/SAM2-Adapter/cdw2/train/images
-      root_path_2: /home/diani/diani/SAM2-Adapter/cdw2/train/masks
+      root_path_1: #root path to your training images
+      root_path_2: #root path to your training ground truth images
       cache: none
       split_key: train
   wrapper:
@@ -23,8 +23,8 @@ val_dataset:
       classes: ['background','bin','concrete','fill dirt','timber','hard plastic','soft plastic','steel','fabric','cardboard','plaster board']
       ignore_bg: false
       palette: [[0,0,0],[128, 0, 0],[0, 128, 0],[128, 128, 0],[0, 0, 128],[128, 0, 128],[0, 128, 128],[128, 128, 128],[64, 0, 0],[192, 0, 0],[64, 128, 0]]
-      root_path_1: /home/diani/diani/SAM2-Adapter/cdw2/val/images
-      root_path_2: /home/diani/diani/SAM2-Adapter/cdw2/val/masks
+      root_path_1: #root path to your validation images
+      root_path_2: #root path to your validation ground truth images
       cache: none
       split_key: test
   wrapper:
@@ -40,8 +40,8 @@ test_dataset:
       classes: ['background','bin','concrete','fill dirt','timber','hard plastic','soft plastic','steel','fabric','cardboard','plaster board']
       ignore_bg: false
       palette: [[0,0,0],[128, 0, 0],[0, 128, 0],[128, 128, 0],[0, 0, 128],[128, 0, 128],[0, 128, 128],[128, 128, 128],[64, 0, 0],[192, 0, 0],[64, 128, 0]]
-      root_path_1: /home/diani/diani/SAM2-Adapter/cdw2/test/images
-      root_path_2: /home/diani/diani/SAM2-Adapter/cdw2/test/masks
+      root_path_1: #root path to your testing images
+      root_path_2: #root path to your testing ground truth images
       cache: none
       split_key: test
   wrapper:
@@ -51,7 +51,7 @@ test_dataset:
   batch_size: 1
 
 eval_type: seg
-sam_checkpoint: /home/diani/diani/SAM2-Adapter/pretrained/sam2.1_hiera_large.pt
+sam_checkpoint: pretrained/sam2.1_hiera_large.pt
 data_norm:
   inp:
     sub:
@@ -74,7 +74,7 @@ model:
     num_classes: 11
     inp_size: 1024
     loss: iou
-    # loss_weight : [1,1,1,1,1,1,1,1,1,1,1]
+     loss_weight : [1,1,1,1,1,1,1,1,1,1,1]
     encoder_mode:
       name: sam
       stages: [2, 6, 36, 4]
@@ -118,7 +118,7 @@ optimizer:
   args:
     lr: 0.0002
 lr_min: 1.0e-7
-epoch_max: 1000
+epoch_max: 500
 
 multi_step_lr:
   milestones:
