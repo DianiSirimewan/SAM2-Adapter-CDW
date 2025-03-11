@@ -23,8 +23,6 @@ torchrun --nproc_per_node=2 --nnodes=1 test.py --config [CONFIG_PATH] --model [M
 
 ### Construction and Demolition Waste Segmentation
 - **[CDW-Seg - to be added]
-- 
-- **
 
 ## Acknowledgements
 
