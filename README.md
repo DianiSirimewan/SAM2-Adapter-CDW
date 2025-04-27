@@ -27,7 +27,7 @@ torchrun --nproc_per_node=2 --nnodes=1 test.py --config [CONFIG_PATH] --model [M
 
 ## Annotations
 
-Please refer [Labelme]((https://labelme.io/)) for annotation protocols.
+Please refer to [Labelme](https://labelme.io/) package for annotation protocols.
 
 ## Acknowledgements
 
