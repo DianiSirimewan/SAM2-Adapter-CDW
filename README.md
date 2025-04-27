@@ -18,6 +18,7 @@ torchrun --nproc_per_node=2 --nnodes=1 train.py --config [CONFIG_PATH]
 ```bash
 torchrun --nproc_per_node=2 --nnodes=1 test.py --config [CONFIG_PATH] --model [MODEL_PATH]
 ```
+2. Download trained model weights from this shared [link](https://drive.google.com/drive/folders/16cdnJfr2jb-e_FjMVIF5N_gyhYKvzNJJ?usp=drive_link).
 
 ## Dataset
 
